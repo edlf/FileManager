@@ -1,0 +1,1 @@
+Copy Media folder into same directory as the XBE otherwise app wont load as it fails to load fonts.
