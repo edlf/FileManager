@@ -4,7 +4,7 @@ On **July 21st, 2002**, the very first homebrew file manager for the original Xb
 It gave users direct control over their files long before dashboards and other tools came along.  
 Unfortunately, the source code was never released, so enhancements and new features couldn’t be added.
 
-This project is an attempt to **pay respect to that legacy** with a new **standalone** — and most importantly, **open source** — file manager for the original Xbox.
+This project is an attempt to **pay respect to that legacy** with a new **standalone** and most importantly, **open source** file manager for the original Xbox.
 
 ---
 
@@ -30,20 +30,19 @@ We want *you* — the scene and community that keeps the OG Xbox alive — to:
 
 ## 📸 Screenshots
 
-![Screenshot 1](Screenshots/Filemanager1.png)  
-![Screenshot 2](Screenshots/Filemanager2.png)  
-![Screenshot 3](Screenshots/Filemanager3.png)  
-![Screenshot 4](Screenshots/Filemanager4.png)  
-
-*(Render in **720p** for correct interface display.)*
+![Screenshot 1](Screenshots/FileManager1.jpg)  
+![Screenshot 2](Screenshots/FileManager2.jpg)  
+![Screenshot 3](Screenshots/FileManager3.jpg)  
+![Screenshot 4](Screenshots/FileManager4.jpg)  
 
 ---
 
 ## 🛠️ How to Build / Run
 
-- Build with your preferred toolchain (XDK / OpenXDK).  
+- Build with XDK.  
 - Copy the compiled `.xbe` to your Xbox.  
 - ⚠️ **Important**: Copy the **Media** folder into the **same directory as the `.xbe`**, otherwise the app will fail to load (fonts won’t be found).  
+*(Set Xbox to display in **720p** for correct interface display.)*
 
 ---
 
