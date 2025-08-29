@@ -135,6 +135,7 @@ public:
     };
 
     CXBFont m_font;
+	CXBFont m_font_monospace;
     int     m_visible;              // rows
     unsigned char m_prevA, m_prevB, m_prevY;
     DWORD        m_prevButtons;          // last frame's digital buttons
@@ -359,6 +360,7 @@ public:
         return CreateDirectoryA(path, NULL) ? true : false;
     }
     bool CopyFileSimpleA(const char* s, const char* d){ return CopyFileA(s, d, FALSE) ? true : false; }
+
     bool DeleteRecursiveA(const char* path){
         DWORD a = GetFileAttributesA(path);
         if (a == INVALID_FILE_ATTRIBUTES) return false;
@@ -378,6 +380,7 @@ public:
             return DeleteFileA(path) ? true : false;
         }
     }
+
     bool CopyRecursiveA(const char* srcPath, const char* dstDir){
         DWORD a = GetFileAttributesA(srcPath);
         if (a == INVALID_FILE_ATTRIBUTES) return false;
@@ -404,6 +407,7 @@ public:
             return CopyFileSimpleA(srcPath, dstPath);
         }
     }
+
     ULONGLONG DirSizeRecursiveA(const char* path){
         ULONGLONG sum = 0;
         DWORD a = GetFileAttributesA(path);
@@ -503,10 +507,12 @@ public:
         m_renSelRow = 0; m_renSelCol = 0;
         m_mode = MODE_RENAME;
     }
+
     void CancelRename(){
         m_renActive = false;
         m_mode = MODE_BROWSE;
     }
+
     void AcceptRename(){
         SanitizeFatxNameInPlace(m_renBuf);
         if (_stricmp(m_renBuf, m_renOld)==0){ SetStatus("No change"); CancelRename(); return; }
@@ -933,9 +939,14 @@ public:
     }
 
     HRESULT Initialize(){
-        if (FAILED(m_font.Create("D:\\Media\\Font.xpr", 0))) {
-            m_font.Create("D:\\Media\\CourierNew.xpr", 0);
+        if (FAILED(m_font.Create("D:\\Media\\Arial_16.xpr", 0))) {
+			return XBAPPERR_MEDIANOTFOUND;
         }
+
+		//if (FAILED(m_font_monospace.Create("D:\\Media\\Consolas_12.xpr", 0))) {
+		//	return XBAPPERR_MEDIANOTFOUND;
+        //}
+
         XBInput_CreateGamepads(); MapStandardDrives_Io(); RescanDrives();
         BuildDriveItems(m_pane[0].items); BuildDriveItems(m_pane[1].items);
 

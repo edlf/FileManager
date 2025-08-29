@@ -393,6 +393,25 @@
 				RelativePath="C:\Program Files\Microsoft Xbox SDK\Samples\Xbox\Common\Src\xbVoice.cpp">
 			</File>
 		</Filter>
+		<Filter
+			Name="Resources"
+			Filter="">
+			<File
+				RelativePath=".\Resources\Arial_12.rdf">
+			</File>
+			<File
+				RelativePath=".\Resources\Arial_16.rdf">
+			</File>
+			<File
+				RelativePath=".\Resources\Arial_18.rdf">
+			</File>
+			<File
+				RelativePath=".\Resources\Consolas_12.rdf">
+			</File>
+			<File
+				RelativePath=".\Resources\Consolas_16.rdf">
+			</File>
+		</Filter>
 		<File
 			RelativePath=".\ReadMe.txt">
 		</File>
